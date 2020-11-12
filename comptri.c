@@ -311,17 +311,19 @@ int main()
 
 	for (long int i = 32; i < TAILLEMAX; i *= 2)
 	{
-		initTab(Tab, i);
-		unsigned long int *tabt = copyTab(Tab, i); //Tableau à trier
-		for (int j = 0; j < NBFCT; j++)
+		for(int k = 0; k < NBTESTS; k++)
 		{
-			clock_t time1 = clock();
-			sortFct[j](tabt, 0, i); //Tri
-			clock_t time2 = clock();
-			Moys[j][tailleM] += (double)(time2 - time1) / 1000;
-			realloc_p(&Moys, tailleM, j);
-
-			free(tabt);
+			initTab(Tab, i);
+			for (int j = 0; j < NBFCT; j++)
+			{
+				unsigned long int *tabt = copyTab(Tab, i); //Tableau à trier
+				clock_t time1 = clock();
+				sortFct[j](tabt, 0, i); //Tri
+				clock_t time2 = clock();
+				Moys[j][tailleM] += (double)(time2 - time1) / 1000;
+				realloc_p(&Moys, tailleM, j);
+				free(tabt);
+			}
 		}
 		tailleM++;
 	}
