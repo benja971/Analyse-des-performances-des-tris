@@ -4,10 +4,9 @@
 
 #define ELT_MAX 100000
 #define TAILLE 64
-#define TAILLEMAX 10000000
+#define TAILLEMAX 100000
 #define NBTEST 5
-#define NBTAILLE 11
-#define NBFCT 5
+#define NBFCT 4
 
 void printTab(unsigned long int *t, unsigned long int n)
 {
@@ -223,13 +222,13 @@ void triCompte(unsigned long int *t, unsigned int d, unsigned long int n)
 	}
 }
 
-unsigned long int *CopyTab(unsigned long int *Tab, long int j)
+unsigned long int *copyTab(unsigned long int *Tab, long int j)
 {
 	unsigned long int *tabt = (unsigned long int *)malloc(sizeof(unsigned long int) * TAILLEMAX);
 	if (tabt == NULL)
 	{
-		exit(1);
 		printf("Erreur creation tabt");
+		exit(1);
 	}
 
 	for (int i = 0; i < j; i++)
@@ -240,51 +239,96 @@ unsigned long int *CopyTab(unsigned long int *Tab, long int j)
 	return tabt;
 }
 
-void Affichertab2d(double **Moys)
+double **createTabMoy()
 {
-	for (int i = 0; i < 4; i++)
+	double **Moys = (double **)malloc(NBFCT * sizeof(double *));
+	if (Moys == NULL)
 	{
-		for (int j = 0; j < 15; j++)
+		printf("Erreur d'init de Moys**.");
+		exit(1);
+	}
+
+	for (int i = 0; i < NBFCT; i++)
+	{
+		Moys[i] = (double *)malloc(sizeof(double));
+		if (Moys[i] == NULL)
 		{
-			printf("%f\t", Moys[i][j]);
+			printf("Erreur d'init de Moys[%d].", i);
+			exit(1);
 		}
-		printf("\n");
+		Moys[i][0] = 0;
+	}
+
+	return Moys;
+}
+
+void realloc_p(double ***Moys, int taille, int i)
+{
+	(*Moys)[i] = (double *)realloc((*Moys)[i], (taille + 2) * sizeof(double));
+	(*Moys)[i][taille + 1] = 0;
+	if ((*Moys)[i] == NULL)
+	{
+		printf("Erreur dans le realloc.\n");
+		exit(1);
+	}
+}
+
+void affichertab2d(double **Moys, int *taille)
+{
+	for (int i = 0; i < *taille; i++)
+	{
+		for (int j = 0; j < NBFCT; j++)
+		{
+			printf("| %f ", (double)Moys[i][j]);
+		}
+		printf("|\n");
 	}
 }
 
 int main()
 {
 	unsigned long int *Tab;
+	double **Moys = createTabMoy();
 	unsigned long int taille = TAILLE;
+	int tailleM = 0;
 
 	void (*sortFct[NBFCT])(unsigned long int *t, unsigned int d, unsigned long int n) = {triFusion, triRapide, triTas, triCompte};
 
 	Tab = (unsigned long int *)malloc(sizeof(unsigned long int) * TAILLEMAX);
+	if (Tab == NULL)
+	{
+		printf("Erreur malloc.");
+		exit(1);
+	}
 
 	FILE *f = NULL;
 	f = fopen("chrono.txt", "w");
 	if (f == NULL)
 	{
-		exit(1);
 		printf("Erreur dans l'ouverture du fichier\n");
+		exit(1);
 	}
 
 	for (long int i = 32; i < TAILLEMAX; i *= 2)
 	{
 		initTab(Tab, i);
-		fprintf(f, "Taille tableau: %li\n", i);
-		for (int j = 0; j < 4; j++)
+		unsigned long int *tabt = copyTab(Tab, i); //Tableau à trier
+		for (int j = 0; j < NBFCT; j++)
 		{
-			unsigned long int *tabt = CopyTab(Tab, i); //Tableau à trier
 			clock_t time1 = clock();
 			sortFct[j](tabt, 0, i); //Tri
 			clock_t time2 = clock();
+			Moys[j][tailleM] += (double)(time2 - time1) / 1000;
+			realloc_p(&Moys, tailleM, j);
+
 			free(tabt);
-			fprintf(f, "tri n°%d: %f\n", j, (double)(time2 - time1) / 1000);
 		}
-		fprintf(f, "\n");
+		tailleM++;
 	}
+
+	affichertab2d(Moys, &tailleM);
 	fclose(f);
+
 	printf("Le programme c'est deroule sans problemes.");
 	return 0;
 }
