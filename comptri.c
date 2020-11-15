@@ -4,8 +4,8 @@
 
 #define ELT_MAX 100000
 #define TAILLE 64
-#define TAILLEMAX 100000
-#define NBTEST 5
+#define TAILLEMAX 1000000
+#define NBTESTS 10
 #define NBFCT 4
 
 void printTab(unsigned long int *t, unsigned long int n)
@@ -239,6 +239,18 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
 	return tabt;
 }
 
+void affichertab2d(double **Moys, int taille)
+{
+	for (int i = 0; i < taille; i++)
+	{
+		for (int j = 0; j < NBFCT; j++)
+		{
+			printf("| %f ", (double)Moys[j][i]);
+		}
+		printf("|\n");
+	}
+}
+
 double **createTabMoy()
 {
 	double **Moys = (double **)malloc(NBFCT * sizeof(double *));
@@ -250,39 +262,44 @@ double **createTabMoy()
 
 	for (int i = 0; i < NBFCT; i++)
 	{
-		Moys[i] = (double *)malloc(sizeof(double));
+		Moys[i] = (double *)malloc(15 * sizeof(double));
 		if (Moys[i] == NULL)
 		{
 			printf("Erreur d'init de Moys[%d].", i);
 			exit(1);
 		}
-		Moys[i][0] = 0;
+
+		for (int j = 0; j < 15; j++)
+		{
+			Moys[i][j] = 0;
+		}
 	}
 
 	return Moys;
 }
 
-void realloc_p(double ***Moys, int taille, int i)
+void ecrireTxt(double **Moys)
 {
-	(*Moys)[i] = (double *)realloc((*Moys)[i], (taille + 2) * sizeof(double));
-	(*Moys)[i][taille + 1] = 0;
-	if ((*Moys)[i] == NULL)
+	FILE *f0 = fopen("0.txt", "w"), *f1 = fopen("1.txt", "w"), *f2 = fopen("2.txt", "w"), *f3 = fopen("3.txt", "w");
+	FILE *files[] = {f0, f1, f2, f3};
+	if (f0 == NULL || f1 == NULL || f2 == NULL || f3 == NULL)
 	{
-		printf("Erreur dans le realloc.\n");
+		printf("Erreur dans l'ouverture d'un fichier\n");
 		exit(1);
 	}
-}
 
-void affichertab2d(double **Moys, int *taille)
-{
-	for (int i = 0; i < *taille; i++)
+	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < NBFCT; j++)
+		for (int j = 0; j < 15; j++)
 		{
-			printf("| %f ", (double)Moys[i][j]);
+			fprintf(files[i], "%f\n", (double)Moys[i][j]);
 		}
-		printf("|\n");
 	}
+
+	fclose(f0);
+	fclose(f1);
+	fclose(f2);
+	fclose(f3);
 }
 
 int main()
@@ -290,7 +307,7 @@ int main()
 	unsigned long int *Tab;
 	double **Moys = createTabMoy();
 	unsigned long int taille = TAILLE;
-	int tailleM = 0;
+	int tailleM = -1;
 
 	void (*sortFct[NBFCT])(unsigned long int *t, unsigned int d, unsigned long int n) = {triFusion, triRapide, triTas, triCompte};
 
@@ -301,17 +318,10 @@ int main()
 		exit(1);
 	}
 
-	FILE *f = NULL;
-	f = fopen("chrono.txt", "w");
-	if (f == NULL)
-	{
-		printf("Erreur dans l'ouverture du fichier\n");
-		exit(1);
-	}
-
 	for (long int i = 32; i < TAILLEMAX; i *= 2)
 	{
-		for(int k = 0; k < NBTESTS; k++)
+		tailleM++;
+		for (int k = 0; k < NBTESTS; k++)
 		{
 			initTab(Tab, i);
 			for (int j = 0; j < NBFCT; j++)
@@ -321,16 +331,12 @@ int main()
 				sortFct[j](tabt, 0, i); //Tri
 				clock_t time2 = clock();
 				Moys[j][tailleM] += (double)(time2 - time1) / 1000;
-				realloc_p(&Moys, tailleM, j);
 				free(tabt);
 			}
 		}
-		tailleM++;
 	}
-
-	affichertab2d(Moys, &tailleM);
-	fclose(f);
-
+	affichertab2d(Moys, 15);
+	ecrireTxt(Moys);
 	printf("Le programme c'est deroule sans problemes.");
 	return 0;
 }

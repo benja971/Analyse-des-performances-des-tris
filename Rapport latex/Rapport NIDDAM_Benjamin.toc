@@ -1,0 +1,20 @@
+\babel@toc {french}{}
+\contentsline {section}{\numberline {1}Introduction}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Définition}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {paragraph}{}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Exemples}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}Les Tris par comparaison}{3}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}Les Tris utilisant la structure de données}{4}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}Les Tris externes}{4}{}%
+\contentsline {section}{\numberline {2}Critères de classification}{4}{}%
+\contentsline {subsection}{\numberline {2.1}Principe de fonctionnement}{4}{}%
+\contentsline {subsection}{\numberline {2.2}Complexité algorithmique}{5}{}%
+\contentsline {subsection}{\numberline {2.3}Complexité spatiale}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Tri en place}{6}{}%
+\contentsline {subsection}{\numberline {2.5}Tri stable}{6}{}%
+\contentsline {subsection}{\numberline {2.6}Tri interne et externe}{6}{}%
+\contentsline {subsection}{\numberline {2.7}Tri parallèle}{6}{}%
+\contentsline {section}{\numberline {3}Présentation des tris}{6}{}%
+\contentsline {section}{\numberline {4}Comparaison des algorithmes}{6}{}%
+\contentsline {section}{\numberline {5}Conclusion}{6}{}%
