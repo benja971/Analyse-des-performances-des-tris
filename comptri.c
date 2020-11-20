@@ -4,7 +4,7 @@
 
 #define ELT_MAX 100000
 #define TAILLE 64
-#define TAILLEMAX 1000000
+#define TAILLEMAX 655360
 #define NBTESTS 10
 #define NBFCT 4
 
@@ -262,14 +262,14 @@ double **createTabMoy()
 
 	for (int i = 0; i < NBFCT; i++)
 	{
-		Moys[i] = (double *)malloc(15 * sizeof(double));
+		Moys[i] = (double *)malloc(16 * sizeof(double));
 		if (Moys[i] == NULL)
 		{
 			printf("Erreur d'init de Moys[%d].", i);
 			exit(1);
 		}
 
-		for (int j = 0; j < 15; j++)
+		for (int j = 0; j < 16; j++)
 		{
 			Moys[i][j] = 0;
 		}
@@ -290,7 +290,7 @@ void ecrireTxt(double **Moys)
 
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < 15; j++)
+		for (int j = 0; j < 16; j++)
 		{
 			fprintf(files[i], "%f\n", (double)Moys[i][j]);
 		}
@@ -318,9 +318,10 @@ int main()
 		exit(1);
 	}
 
-	for (long int i = 32; i < TAILLEMAX; i *= 2)
+	for (long int i = 20; i <= TAILLEMAX; i *= 2)
 	{
 		tailleM++;
+		printf("%d", tailleM);
 		for (int k = 0; k < NBTESTS; k++)
 		{
 			initTab(Tab, i);
@@ -335,7 +336,7 @@ int main()
 			}
 		}
 	}
-	affichertab2d(Moys, 15);
+	affichertab2d(Moys, 16);
 	ecrireTxt(Moys);
 	printf("Le programme c'est deroule sans problemes.");
 	return 0;
