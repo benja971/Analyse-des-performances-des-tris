@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\usepackage[top = 2.0cm, bottom = 2.0cm, left = 2.0cm, right = 2.0cm]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{lmodern}
+\usepackage{xcolor}
+\usepackage[title]{appendix}
+\usepackage[most]{tcolorbox}
+\usepackage{listings}
+\usepackage{verbatim}
+\usepackage{caption}
+
+\hbadness 11000
+\vbadness 11000
+
+\definecolor{lightgray}{gray}{0.85}
+\newtcolorbox{history}[1][]{colback=black!5, colframe=black!5, coltitle=black, fonttitle=\bfseries, title=Selon Wikipedia..., sharp corners, borderline west={2pt}{0pt}{red!80!black}, enhanced, breakable}
+\tcbset{colback=lightgray, colframe=lightgray}
+
+\lstset{
+	backgroundcolor=\color{white},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	commentstyle=\color{green},
+	keepspaces=true,
+	firstnumber=1,
+	keywordstyle=\color{blue},
+	morekeywords={REFERENCES},
+	language=Python,
+	numbers=left,
+	tabsize=4,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	stringstyle=\color{magenta}
+}
+
+\title{\textbf{Comparaison de différents algorithmes de tri}}
+\author{Juanfer MERCIER}
+\date{03 Décembre 2019}
+
+\begin{document}
+%--------------------------------- PAGE DE GARDE ---------------------------------
+	\maketitle
+	\vspace{-0.4cm}
+	\begin{figure}[hbt!]
+		\centering
+		\includegraphics[scale=0.1]{musser.jpg}
+		\caption*{David "Dave" Musser est un professeur d'informatique retraité qui a enseigné à l'Institut Rensselaer Polytechnic à Troy, New York. Il est connu pour avoir développé un algorithme de tri appelé "\textbf{Introsort}" en 1997 pour la \textit{Standard Template Library} (STL).}
+	\end{figure}
+	\flushleft
+
+%----------------------------------- SOMMAIRE ------------------------------------	
+	\renewcommand{\contentsname}{Sommaire}
+	\tableofcontents
+	\newpage
+	
+%------------------------------------- TEXTE -------------------------------------
+	\justify
+	\section{Quelques petits rappels}
+		\subsection{Les algorithmes de tri}
+			\begin{history}
+				"Un algorithme de tri est, en informatique ou en mathématiques, un algorithme qui permet d'organiser une collection d'objets selon une relation d'ordre déterminée."
+			\end{history}
+			
+			Ainsi, un algorithme de tri permet d'ordonner un ensemble de données selon une relation d'ordre choisi au préalable (\underline{Exemple}: on peut trier des entiers par ordre décroissant).
+			Il existe de nombreux algorithmes fonctionnels qui permettent d'ordonner un ensemble mais il semble naturel de choisir ceux qui sont les plus performants lorsque l'on fait face à certaines contraintes (très grand nombre de données, utilisation des ressources, ...). \\
+			
+			Dans un premier temps, avant de comparer les algorithmes, il faudrait que l'on ait des critères qui nous indique lequel est le plus adapté à la situation.
+			
+		\subsection{Critères de comparaison}
+			\begin{itemize}
+				\item[\textbullet] La \textbf{complexité temporelle} dans le pire des cas est une mesure de temps utilisé par un algorithme, exprimé comme fonction de la taille de l'entrée à l'aide des notations de Landau $O$ ou $\Theta$. C'est le nombre d'opérations élémentaires effectuées pour trier un ensemble de données. \\
+				\item[\textbullet] La \textbf{complexité spatiale} dans le pire des cas est une mesure de la quantité de mémoire utilisé par l'algorithme pour s'exécuter qui peut elle aussi dépendre de taille de l'entrée. \\
+				\item[\textbullet] Un tri est dit \textbf{en place} si la complexité spatiale de l'espace supplémentaire pour trier l'ensemble de données est \textbf{$O(1)$} (ou encore \textbf{$O(log(n))$}). \\
+				\item[\textbullet] Un tri est dit \textbf{stable} s'il préserve la disposition initial des éléments que l'ordre considère comme égaux. \\
+			\end{itemize}
+			
+		\subsection{Lien avec les données}
+			\begin{history}
+				"La comparaison empirique d'algorithmes n'est pas aisée dans la mesure où beaucoup de paramètres entrent en compte: taille de données, ordre des données, [...]"
+			\end{history}
+			L'étude théorique des algorithmes n'est pas suffisante car l'efficacité de ces-derniers dépend aussi de l'ordre des données sur lesquelles on les utilise. Les algorithmes que nous allons considérés par la suite sont les tris: par \textit{insertion}, par \textit{tas}, \textit{compte}, \textit{fusion} et \textit{rapide}. Pour les étudier et les comparer, on se propose de créer plusieurs ensembles de données. \\
+			
+			On ordonnera les données toujours par ordre croissant. De plus, on donnera aux données un ordre prédéfini (avant le tri). Les jeux de données seront ordonnés: par ordre croissant de 0 à n, par ordre décroissant de n à 0 (inversé), aléatoirement sans redondance de donnée, aléatoirement avec redondance, aléatoirement mais de façon uniforme sans redondance et aléatoirement de façon uniforme mais avec redondance. D'autre part, on fera varié la taille de ces jeux de données (on aura par exemple n = 10, n = 500, n = 25000). \\
+		
+			On utilise un script Python pour générer ces jeux de données:
+				\lstinputlisting[language=Python]{../createdata.py} \newpage
+				
+			Ces données sont ensuite chargés dans un programme C où sont implémentés les algorithmes de tri:
+			\lstinputlisting[language=C]{../main.c}
+			
+			Avec les fonctions \textit{initTab} et \textit{saveToFile} telles que:
+			\lstinputlisting[language=C]{../func.c}
+			
+	\section{Performances des tris}
+		\subsection{Traitement des données}
+			Pour observer les performances des tris sur nos jeux de données, il nous suffit d'utiliser les résultats écrits dans les fichiers créés par le programme en C. On peut traiter les données à la main ou utiliser le script Python suivant: 
+			\lstinputlisting[language=Python]{../howtoplot.py}
+			
+			Ce script génère plusieurs tracés, on s'intéresse surtout aux tracés suivant:
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.5]{ord1.png}
+				\includegraphics[scale=0.5]{inv1.png} \\
+				\includegraphics[scale=0.5]{alea1.png}
+				\includegraphics[scale=0.5]{aleaR1.png} \\
+				\includegraphics[scale=0.5]{unif1.png}
+				\includegraphics[scale=0.5]{unifR1.png} \\
+				\caption{Comparaisons des tris en sur les six jeux de données différents}
+			\end{figure}
+			\justify
+			
+			Pour s'assurer d'avoir de bons résultats on devrait recréer l'expérience plusieurs fois (\textbf{N.B:} on aurait pu mesurer le temps de chaque algorithme sur chaque jeu de donnée un certain nombre de fois et ensuite faire une moyenne). On peut aussi regarder les tracés de chacun des tris pour observer dans quel cas ils sont à éviter ou à utiliser:
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.5]{count.png}
+				\includegraphics[scale=0.5]{heap.png} \\
+				\includegraphics[scale=0.5]{insertion.png}
+				\includegraphics[scale=0.5]{merge.png} \\
+				\includegraphics[scale=0.5]{quick.png}
+				\caption{Performances des différents tris}
+			\end{figure}
+			\justify
+			
+		\subsection{Complexité temporelle}
+			On remarque grâce aux tracés de la \textit{Figure 1} que parmi les algorithmes étudiés le moins efficace en général est le tri par insertion qui a une complexité dans le pire des cas $O(n^2)$. Cependant, celui-ci est plus rapide que tous les autres tris sur le jeu de données ordonné. C'est notamment le désavantage du tri rapide: il n'est pas efficace sur les jeux de données déjà presque triés. \\
+			
+			Les tracés précédents ne permettent pas avec précision de comparer le tri rapide, le tri fusion, le tri compte et le tri par tas. En modifiant le script précédant, on peut obtenir des tracés plus fins en omettant les jeux de données ordonné et inversé (on met de côté le point faible du tri rapide). On a donc:
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.5]{alea2.png}
+				\includegraphics[scale=0.5]{aleaR2.png} \\
+				\includegraphics[scale=0.5]{unif2.png}
+				\includegraphics[scale=0.5]{unifR2.png} \\
+				\caption{Comparaisons des tris en sur les jeux de données non triés}
+			\end{figure}
+			\justify \newpage
+			
+			On remarque que le tri compte est le plus rapide, c'est un algorithme de tri par dénombrement qui s'applique sur des valeurs entières de complexité dans le pire des cas $O(n + k)$. Il est suivi du tri rapide (qui est visiblement plus lent que le tri compte dés que le nombre de données est de 10000 ou plus). Le tri fusion et le tri par tas ont une complexité $O(nlog(n))$ bien  qu'empiriquement le tri fusion est légèrement plus rapide en général. 
+			
+		\subsection{Complexité spatiale et stabilité}
+			Le tri par insertion et le tri par tas ont une complexité spatiale dans le pire des cas $O(n)$ et ils n'utilisent qu'une quantité constante d'espace additionnel ($O(1)$). Le tri rapide, quant à lui, a une complexité spatiale dans le pire des cas $O(log(n))$ (version Sedgewick) ou $O(n)$ (version "naïve"). Pour finir, le tri fusion a une complexité spatiale dans le pire des cas $O(n)$ et le tri compte a une complexité spatiale dans le pire des cas $O(n + r)$. \\
+			
+			Pour résumer, les tris par insertion, par tas et rapide sont en place tandis que les tris fusion et compte ne le sont pas. De plus, le tri rapide et le tri par tas ne sont pas stable contrairement aux autres tris.
+			
+	\section{Limitations et algorithmes "hybrides"}
+		\subsection{L'algorithme de tri parfait}
+			Après cette (brève) étude de ces quelques tris on remarque qu'il n'y a pas d'algorithme de tri qui serait efficace pour tous les jeux de données. Le tri par insertion fonctionne bien sur un jeu de donnée trié contrairement au tri rapide qui est moins efficace sur les jeux de données trié (par ordre croissant ou décroissant). Les tri fusion et tri par tas ont l'avantage d'avoir une complexité temporelle dans le pire des cas en $O(nlog(n))$ donc ils sont plus efficaces que le tri rapide sur des jeux de données ordonné mais empiriquement le tri rapide est toujours plus efficace sur les autres jeux (quand il est bien implémenté il peut être deux à trois fois plus rapide que le tri fusion et le tri par tas). Le tri compte (le seul tri sans comparaisons) est le plus efficace parmi les tris étudiés mais il peut difficilement être utilisé sur autre chose que des nombres. \\
+			
+			Ainsi, il est nécessaire de penser aux inconvénients lorsqu'on choisi un algorithme de tri. Le tri rapide reste un très bon choix si l'on sait qu'on a très peu de chances de tomber sur des jeux de données ordonnés. David Musser a cependant su pallier au défaut du tri rapide (sa complexité dans le pire des cas en $O(n^2)$) en inventant l'introspective sort.
+		
+		\subsection{L'introspective sort}
+			L'introspective sort est un algorithme de tri "hybride", son principe est assez simple: on utilise un compteur de récursion! Lorsque la profondeur de récursion dépasse $K log(n)$ (avec K une constante) on tri le sous-tableau restant avec un algorithme dont la complexité est $O(n log(n))$ dans tous les cas (tri par tas, tri fusion, ...). \\
+			
+			On utilise une implémentation en C++ (avec quelques modifications) de l'introsort trouvé sur le site \textit{geeksforgeeks.org} (voir annexe), cette implémentation utilise en fait 3 autres algorithmes de tri: le tri rapide, le tri par insertion et le tri par tas. La profondeur de récursion maximale de celui-ci est de $2*log_2(n)$ et sa complexité spatiale dans le pire des cas est $O(log(n))$. En modifiant le script Python correspondant, on obtiens des tracés (voir annexe) qui montrent que l'introsort est plus rapide que tous les autres sur tous les jeux de données.
+
+		\subsection{Conclusion}
+			Les tris compte, rapide, fusion et par tas sont très performants bien qu'ils présentent 
+		des inconvénients. Mais c'est en combinant de la bonne façon ces algorithmes que l'on conçoit des algorithmes encore plus efficaces (bien que plus complexes) qui peuvent être utilisés avec de très grosses données. Dans ce cas-là même les tris moins rapide (comme le tri par insertion) peuvent être utiles.
+	\begin{appendices}
+		\newpage
+		\section{Tracés de l'introsort}
+		\begin{figure}[hbt!]
+			\centering
+			\includegraphics[scale=0.5]{ord3.png}
+			\includegraphics[scale=0.5]{inv3.png} \\
+			\includegraphics[scale=0.5]{alea3.png}
+			\includegraphics[scale=0.5]{aleaR3.png} \\
+			\includegraphics[scale=0.5]{unif3.png}
+			\includegraphics[scale=0.5]{unifR3.png} \\
+			\includegraphics[scale=0.5]{intro.png} \\
+			\caption{Performances de l'introsort sur les six jeux de données différents}
+		\end{figure}
+		\justify
+		
+		\section{Implémentation de l'introsort en C++}
+		\lstinputlisting[language=C++]{../introsort.cpp}
+	\end{appendices}
+\end{document}

@@ -19,7 +19,7 @@ void printTab(unsigned long int *t, unsigned long int n)
 
 void initTab(unsigned long int *t, unsigned long int n)
 {
-    for (int i = 0; i < n; i++)
+    for (long int i = 0; i < n; i++)
     {
         t[i] = rand() % ELT_MAX;
     }
@@ -30,7 +30,7 @@ void fusion(unsigned long int *t, unsigned int d, unsigned int m, unsigned long 
     /* Création des tableaux auxiliaires */
     long int n1 = m - d + 1;
     long int n2 = f - m;
-    int i, j, k;
+    long int i, j, k;
 
     unsigned long int *L, *M;
     L = (unsigned long int *)malloc(sizeof(unsigned long int) * n1);
@@ -97,7 +97,7 @@ unsigned int partition(unsigned long int *t, unsigned int d, unsigned long int n
     unsigned int j = n + 1;
     unsigned long int b;
 
-    int flag = 1;
+    long int flag = 1;
 
     while (flag)
     {
@@ -142,7 +142,7 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
 {
     unsigned int l = tasGauche(i);
     unsigned int r = tasDroite(i);
-    unsigned int largest;
+    unsigned long int largest;
 
     largest = i;
     if (l <= taille)
@@ -161,7 +161,7 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
     }
     if (largest != i)
     {
-        unsigned int b = t[i];
+        unsigned long int b = t[i];
         t[i] = t[largest];
         t[largest] = b;
         tasSifier(t, taille, largest);
@@ -170,7 +170,7 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
 
 void tasConstruire(unsigned long int *t, unsigned int long taille)
 {
-    for (int i = taille / 2; i >= 0; i--)
+    for (long int i = taille / 2; i >= 0; i--)
     {
         tasSifier(t, taille, i);
     }
@@ -195,28 +195,28 @@ void triTas(unsigned long int *t, unsigned int d, unsigned long int n)
 
 void triCompte(unsigned long int *t, unsigned int d, unsigned long int n)
 {
-    unsigned int *B, *C;
-    B = (unsigned int *)malloc(sizeof(unsigned int) * (n + 1));
-    C = (unsigned int *)malloc(sizeof(unsigned int) * ELT_MAX);
+    unsigned long int *B, *C;
+    B = (unsigned long int *)malloc(sizeof(unsigned long int) * (n + 1));
+    C = (unsigned long int *)malloc(sizeof(unsigned long int) * ELT_MAX);
 
-    for (unsigned int i = 0; i < ELT_MAX; i++)
+    for (unsigned long int i = 0; i < ELT_MAX; i++)
     {
         C[i] = 0;
     }
-    for (unsigned int i = 0; i <= n; i++)
+    for (unsigned long int i = 0; i <= n; i++)
     {
         C[t[i]]++;
     }
-    for (unsigned int i = 1; i < ELT_MAX; i++)
+    for (unsigned long int i = 1; i < ELT_MAX; i++)
     {
         C[i] = C[i] + C[i - 1];
     }
-    for (int i = n; i >= 0; i--)
+    for (long int i = n; i >= 0; i--)
     {
         B[C[t[i]] - 1] = t[i];
         C[t[i]]--;
     }
-    for (unsigned int i = 0; i <= n; i++)
+    for (unsigned long int i = 0; i <= n; i++)
     {
         t[i] = B[i];
     }
@@ -239,11 +239,11 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
     return tabt;
 }
 
-void affichertab2d(double **Moys, int taille)
+void affichertab2d(double **Moys, int long taille)
 {
-    for (int i = 0; i < taille; i++)
+    for (int long i = 0; i < taille; i++)
     {
-        for (int j = 0; j < NBFCT; j++)
+        for (int long j = 0; j < NBFCT; j++)
         {
             printf("| %f ", (double)Moys[j][i]);
         }
@@ -321,7 +321,6 @@ int main()
     for (long int i = 20; i <= TAILLEMAX; i *= 2)
     {
         tailleM++;
-        printf("%d", tailleM);
         for (int k = 0; k < NBTESTS; k++)
         {
             initTab(Tab, i);

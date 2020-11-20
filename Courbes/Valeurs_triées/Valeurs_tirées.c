@@ -5,12 +5,12 @@
 #define ELT_MAX 100000
 #define TAILLE 64
 #define TAILLEMAX 44000
-#define NBTESTS 10
+#define NBTESTS 15
 #define NBFCT 4
 
 void printTab(unsigned long int *t, unsigned long int n)
 {
-    for (int i = 0; i < n; i++)
+    for (long int i = 0; i < n; i++)
     {
         printf("%5d | ", t[i]);
     }
@@ -19,27 +19,18 @@ void printTab(unsigned long int *t, unsigned long int n)
 
 void initTab(unsigned long int *t, unsigned long int n)
 {
-    for (int i = 0; i <= n; i++)
+    for (long int i = 0; i <= n; i++)
     {
-        t[n - i] = i;
+        t[i] = (((double)i / n) * ELT_MAX);
     }
-
-    //     for (int i = 0; i < TAILLEMAX; i++)
-    //     {
-    //         long long int a = rand() % n;
-    //         long long int b = rand() % n;
-    //         long long int tmp = a;
-    //         a = b;
-    //         b = tmp;
-    //     }
 }
 
-void fusion(unsigned long int *t, unsigned int d, unsigned int m, unsigned long int f)
+void fusion(unsigned long int *t, unsigned long int d, unsigned long int m, unsigned long int f)
 {
     /* Création des tableaux auxiliaires */
     long int n1 = m - d + 1;
     long int n2 = f - m;
-    int i, j, k;
+    long int i, j, k;
 
     unsigned long int *L, *M;
     L = (unsigned long int *)malloc(sizeof(unsigned long int) * n1);
@@ -86,7 +77,7 @@ void fusion(unsigned long int *t, unsigned int d, unsigned int m, unsigned long 
     }
 }
 
-void triFusion(unsigned long int *t, unsigned int d, unsigned long int n)
+void triFusion(unsigned long int *t, unsigned long int d, unsigned long int n)
 {
     unsigned long int q;
 
@@ -99,14 +90,14 @@ void triFusion(unsigned long int *t, unsigned int d, unsigned long int n)
     }
 }
 
-unsigned int partition(unsigned long int *t, unsigned int d, unsigned long int n)
+unsigned long int partition(unsigned long int *t, unsigned long int d, unsigned long int n)
 {
     unsigned long int x = t[d];
     unsigned long int i = d - 1;
-    unsigned int j = n + 1;
+    unsigned long int j = n + 1;
     unsigned long int b;
 
-    int flag = 1;
+    long int flag = 1;
 
     while (flag)
     {
@@ -132,7 +123,7 @@ unsigned int partition(unsigned long int *t, unsigned int d, unsigned long int n
     return j;
 }
 
-void triRapide(unsigned long int *t, unsigned int d, unsigned long int n)
+void triRapide(unsigned long int *t, unsigned long int d, unsigned long int n)
 {
     unsigned long int q;
     if (d < n)
@@ -143,15 +134,15 @@ void triRapide(unsigned long int *t, unsigned int d, unsigned long int n)
     }
 }
 
-unsigned int tasParent(unsigned int i) { return (i - 1) / 2; }
-unsigned int tasGauche(unsigned int i) { return 2 * i + 1; }
-unsigned int tasDroite(unsigned int i) { return 2 * i + 2; }
+unsigned long int tasParent(unsigned long int i) { return (i - 1) / 2; }
+unsigned long int tasGauche(unsigned long int i) { return 2 * i + 1; }
+unsigned long int tasDroite(unsigned long int i) { return 2 * i + 2; }
 
 void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int i)
 {
-    unsigned int l = tasGauche(i);
-    unsigned int r = tasDroite(i);
-    unsigned int largest;
+    unsigned long int l = tasGauche(i);
+    unsigned long int r = tasDroite(i);
+    unsigned long int largest;
 
     largest = i;
     if (l <= taille)
@@ -170,14 +161,14 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
     }
     if (largest != i)
     {
-        unsigned int b = t[i];
+        unsigned long int b = t[i];
         t[i] = t[largest];
         t[largest] = b;
         tasSifier(t, taille, largest);
     }
 }
 
-void tasConstruire(unsigned long int *t, unsigned int long taille)
+void tasConstruire(unsigned long int *t, unsigned long int taille)
 {
     for (int i = taille / 2; i >= 0; i--)
     {
@@ -185,7 +176,7 @@ void tasConstruire(unsigned long int *t, unsigned int long taille)
     }
 }
 
-void triTas(unsigned long int *t, unsigned int d, unsigned long int n)
+void triTas(unsigned long int *t, unsigned long int d, unsigned long int n)
 {
     unsigned long int taille = n;
     unsigned long int b;
@@ -202,33 +193,36 @@ void triTas(unsigned long int *t, unsigned int d, unsigned long int n)
     }
 }
 
-void triCompte(unsigned long int *t, unsigned int d, unsigned long int n)
+void triCompte(unsigned long int *t, unsigned long int d, unsigned long int n)
 {
-    unsigned int *B, *C;
-    B = (unsigned int *)malloc(sizeof(unsigned int) * (n + 1));
-    C = (unsigned int *)malloc(sizeof(unsigned int) * ELT_MAX);
+    unsigned long int *B, *C;
+    B = (unsigned long int *)malloc(sizeof(unsigned long int) * (n + 1));
+    C = (unsigned long int *)malloc(sizeof(unsigned long int) * ELT_MAX);
 
-    for (unsigned int i = 0; i < ELT_MAX; i++)
+    for (unsigned long int i = 0; i < ELT_MAX; i++)
     {
         C[i] = 0;
     }
-    for (unsigned int i = 0; i <= n; i++)
+    for (unsigned long int i = 0; i <= n; i++)
     {
         C[t[i]]++;
     }
-    for (unsigned int i = 1; i < ELT_MAX; i++)
+    for (unsigned long int i = 1; i < ELT_MAX; i++)
     {
         C[i] = C[i] + C[i - 1];
     }
-    for (int i = n; i >= 0; i--)
+    for (unsigned long int i = n; i >= 0; i--)
     {
         B[C[t[i]] - 1] = t[i];
         C[t[i]]--;
     }
-    for (unsigned int i = 0; i <= n; i++)
+    for (unsigned long int i = 0; i <= n; i++)
     {
         t[i] = B[i];
     }
+
+    free(B);
+    free(C);
 }
 
 unsigned long int *copyTab(unsigned long int *Tab, long int j)
@@ -240,7 +234,7 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
         exit(1);
     }
 
-    for (int i = 0; i < j; i++)
+    for (long int i = 0; i < j; i++)
     {
         tabt[i] = Tab[i];
     }
