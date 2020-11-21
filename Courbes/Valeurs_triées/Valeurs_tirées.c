@@ -10,7 +10,7 @@
 
 void printTab(unsigned long int *t, unsigned long int n)
 {
-    for (long int i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("%5d | ", t[i]);
     }
@@ -19,13 +19,14 @@ void printTab(unsigned long int *t, unsigned long int n)
 
 void initTab(unsigned long int *t, unsigned long int n)
 {
-    for (long int i = 0; i <= n; i++)
+    for (long int i = 0; i < n; i++)
     {
-        t[i] = (((double)i / n) * ELT_MAX);
+        t[i] = (unsigned long int)(((double)i / n) * ELT_MAX);
+        // printf("%li\n", t[i]);
     }
 }
 
-void fusion(unsigned long int *t, unsigned long int d, unsigned long int m, unsigned long int f)
+void fusion(unsigned long int *t, unsigned int d, unsigned int m, unsigned long int f)
 {
     /* Création des tableaux auxiliaires */
     long int n1 = m - d + 1;
@@ -77,7 +78,7 @@ void fusion(unsigned long int *t, unsigned long int d, unsigned long int m, unsi
     }
 }
 
-void triFusion(unsigned long int *t, unsigned long int d, unsigned long int n)
+void triFusion(unsigned long int *t, unsigned int d, unsigned long int n)
 {
     unsigned long int q;
 
@@ -90,11 +91,11 @@ void triFusion(unsigned long int *t, unsigned long int d, unsigned long int n)
     }
 }
 
-unsigned long int partition(unsigned long int *t, unsigned long int d, unsigned long int n)
+unsigned int partition(unsigned long int *t, unsigned int d, unsigned long int n)
 {
     unsigned long int x = t[d];
     unsigned long int i = d - 1;
-    unsigned long int j = n + 1;
+    unsigned int j = n + 1;
     unsigned long int b;
 
     long int flag = 1;
@@ -123,7 +124,7 @@ unsigned long int partition(unsigned long int *t, unsigned long int d, unsigned 
     return j;
 }
 
-void triRapide(unsigned long int *t, unsigned long int d, unsigned long int n)
+void triRapide(unsigned long int *t, unsigned int d, unsigned long int n)
 {
     unsigned long int q;
     if (d < n)
@@ -134,14 +135,14 @@ void triRapide(unsigned long int *t, unsigned long int d, unsigned long int n)
     }
 }
 
-unsigned long int tasParent(unsigned long int i) { return (i - 1) / 2; }
-unsigned long int tasGauche(unsigned long int i) { return 2 * i + 1; }
-unsigned long int tasDroite(unsigned long int i) { return 2 * i + 2; }
+unsigned int tasParent(unsigned int i) { return (i - 1) / 2; }
+unsigned int tasGauche(unsigned int i) { return 2 * i + 1; }
+unsigned int tasDroite(unsigned int i) { return 2 * i + 2; }
 
 void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int i)
 {
-    unsigned long int l = tasGauche(i);
-    unsigned long int r = tasDroite(i);
+    unsigned int l = tasGauche(i);
+    unsigned int r = tasDroite(i);
     unsigned long int largest;
 
     largest = i;
@@ -170,13 +171,13 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
 
 void tasConstruire(unsigned long int *t, unsigned long int taille)
 {
-    for (int i = taille / 2; i >= 0; i--)
+    for (long int i = taille / 2; i >= 0; i--)
     {
         tasSifier(t, taille, i);
     }
 }
 
-void triTas(unsigned long int *t, unsigned long int d, unsigned long int n)
+void triTas(unsigned long int *t, unsigned int d, unsigned long int n)
 {
     unsigned long int taille = n;
     unsigned long int b;
@@ -193,7 +194,7 @@ void triTas(unsigned long int *t, unsigned long int d, unsigned long int n)
     }
 }
 
-void triCompte(unsigned long int *t, unsigned long int d, unsigned long int n)
+void triCompte(unsigned long int *t, unsigned int d, unsigned long int n)
 {
     unsigned long int *B, *C;
     B = (unsigned long int *)malloc(sizeof(unsigned long int) * (n + 1));
@@ -211,7 +212,7 @@ void triCompte(unsigned long int *t, unsigned long int d, unsigned long int n)
     {
         C[i] = C[i] + C[i - 1];
     }
-    for (unsigned long int i = n; i >= 0; i--)
+    for (long int i = n; i >= 0; i--)
     {
         B[C[t[i]] - 1] = t[i];
         C[t[i]]--;
@@ -220,9 +221,6 @@ void triCompte(unsigned long int *t, unsigned long int d, unsigned long int n)
     {
         t[i] = B[i];
     }
-
-    free(B);
-    free(C);
 }
 
 unsigned long int *copyTab(unsigned long int *Tab, long int j)
@@ -242,11 +240,11 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
     return tabt;
 }
 
-void affichertab2d(double **Moys, int taille)
+void affichertab2d(double **Moys, long int taille)
 {
-    for (int i = 0; i < taille; i++)
+    for (long int i = 0; i < taille; i++)
     {
-        for (int j = 0; j < NBFCT; j++)
+        for (long int j = 0; j < NBFCT; j++)
         {
             printf("| %f ", (double)Moys[j][i]);
         }
@@ -281,6 +279,15 @@ double **createTabMoy()
     return Moys;
 }
 
+unsigned long int power(unsigned long int a, int b)
+{
+    for (int i = 0; i < b; i++)
+    {
+        a *= 2;
+    }
+    return a;
+}
+
 void ecrireTxt(double **Moys)
 {
     FILE *f0 = fopen("0.txt", "w"), *f1 = fopen("1.txt", "w"), *f2 = fopen("2.txt", "w"), *f3 = fopen("3.txt", "w");
@@ -295,6 +302,7 @@ void ecrireTxt(double **Moys)
     {
         for (int j = 0; j < 12; j++)
         {
+            fprintf(files[i], "%li\n", power(20, j));
             fprintf(files[i], "%f\n", (double)Moys[i][j]);
         }
     }

@@ -168,7 +168,7 @@ void tasSifier(unsigned long int *t, unsigned long int taille, unsigned long int
     }
 }
 
-void tasConstruire(unsigned long int *t, unsigned int long taille)
+void tasConstruire(unsigned long int *t, unsigned long int taille)
 {
     for (long int i = taille / 2; i >= 0; i--)
     {
@@ -231,7 +231,7 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
         exit(1);
     }
 
-    for (int i = 0; i < j; i++)
+    for (long int i = 0; i < j; i++)
     {
         tabt[i] = Tab[i];
     }
@@ -239,11 +239,11 @@ unsigned long int *copyTab(unsigned long int *Tab, long int j)
     return tabt;
 }
 
-void affichertab2d(double **Moys, int long taille)
+void affichertab2d(double **Moys, long int taille)
 {
-    for (int long i = 0; i < taille; i++)
+    for (long int i = 0; i < taille; i++)
     {
-        for (int long j = 0; j < NBFCT; j++)
+        for (long int j = 0; j < NBFCT; j++)
         {
             printf("| %f ", (double)Moys[j][i]);
         }
