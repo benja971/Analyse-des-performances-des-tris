@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  20 NOV 2020 18:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  23 NOV 2020 00:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -210,23 +210,23 @@ No file "Rapport NIDDAM_Benjamin".toc.
 \openout3 = `"Rapport NIDDAM_Benjamin.toc"'.
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 32--35
+Underfull \hbox (badness 10000) in paragraph at lines 32--37
 
  []
 
 [3] [4]
-c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.tex:103: Missing $ inserted.
+c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.tex:107: Missing $ inserted.
 <inserted text> 
                 $
-l.103 ... note cet ordre de grandeur \displaystyle
+l.107 ... note cet ordre de grandeur \displaystyle
                                                    O($n^2$).
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.tex:103: Missing $ inserted.
+c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.tex:107: Missing $ inserted.
 <inserted text> 
                 $
-l.103 ...cet ordre de grandeur \displaystyle O($n^
+l.107 ...cet ordre de grandeur \displaystyle O($n^
                                                   2$).
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -234,37 +234,243 @@ you left one out. Proceed, with fingers crossed.
 <O(n).jpg, id=26, 701.5008pt x 203.8014pt>
 File: O(n).jpg Graphic file (type jpg)
 <use O(n).jpg>
-Package pdftex.def Info: O(n).jpg  used on input line 137.
+Package pdftex.def Info: O(n).jpg  used on input line 142.
 (pdftex.def)             Requested size: 350.74954pt x 101.90044pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--139
+Underfull \hbox (badness 10000) in paragraph at lines 138--144
 
  []
 
 
-Overfull \hbox (24.11243pt too wide) in paragraph at lines 134--139
+Overfull \hbox (24.11243pt too wide) in paragraph at lines 138--144
 []
  []
 
 
-Overfull \hbox (21.31381pt too wide) in paragraph at lines 134--139
+Overfull \hbox (84.43486pt too wide) in paragraph at lines 138--144
 []$ 
  []
 
-[5 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/O(n).jpg>] [6] (c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.aux) ) 
+[5 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/O(n).jpg>]
+<../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png, id=30, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png Graphic file (type png)
+<use ../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png>
+Package pdftex.def Info: ../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png  used on input line 181.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png, id=32, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png Graphic file (type png)
+<use ../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png>
+Package pdftex.def Info: ../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png  used on input line 182.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png, id=33, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png Graphic file (type png)
+<use ../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png>
+Package pdftex.def Info: ../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png  used on input line 183.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png, id=34, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png Graphic file (type png)
+<use ../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png>
+Package pdftex.def Info: ../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png  used on input line 184.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+Overfull \hbox (61.70924pt too wide) in paragraph at lines 181--185
+[][]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 181--185
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 181--185
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 181--185
+[] 
+ []
+
+[6] [7 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png>]
+<../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png, id=45, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png  used on input line 187.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png, id=46, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png  used on input line 188.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png, id=47, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png  used on input line 189.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png, id=48, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png  used on input line 190.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+Overfull \hbox (61.70924pt too wide) in paragraph at lines 187--191
+[][]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 187--191
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 187--191
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 187--191
+[] 
+ []
+
+[8 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png>] [9 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png>]
+<../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png, id=59, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png  used on input line 193.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png, id=60, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png  used on input line 194.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png, id=61, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png  used on input line 195.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png, id=62, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png  used on input line 196.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+Overfull \hbox (61.70924pt too wide) in paragraph at lines 193--197
+[][]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 193--197
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 193--197
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 193--197
+[] 
+ []
+
+[10 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png>] [11 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png>]
+<../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png, id=73, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png  used on input line 199.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png, id=74, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png  used on input line 200.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png, id=75, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png  used on input line 201.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+<../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png, id=76, 578.16pt x 361.35pt>
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png  used on input line 202.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+Overfull \hbox (61.70924pt too wide) in paragraph at lines 199--203
+[][]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 199--203
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 199--203
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 199--203
+[] 
+ []
+
+[12 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png>] [13 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png>]
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png  used on input line 205.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png  used on input line 206.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png  used on input line 207.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+File: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png Graphic file (type png)
+<use ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png>
+Package pdftex.def Info: ../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png  used on input line 208.
+(pdftex.def)             Requested size: 404.70924pt x 252.94327pt.
+
+Overfull \hbox (61.70924pt too wide) in paragraph at lines 205--209
+[][]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 205--209
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 205--209
+[]
+ []
+
+
+Overfull \hbox (44.70924pt too wide) in paragraph at lines 205--209
+[] 
+ []
+
+[14 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png>] [15]
+Overfull \hbox (12.73563pt too wide) in paragraph at lines 210--211
+[]$[]$ 
+ []
+
+[16] [17] (c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.aux) ) 
 Here is how much of TeX's memory you used:
- 4075 strings out of 479497
- 55592 string characters out of 5876370
+ 4164 strings out of 479497
+ 61290 string characters out of 5876370
  348924 words of memory out of 5000000
- 21038 multiletter control sequences out of 15000+600000
+ 21118 multiletter control sequences out of 15000+600000
  547373 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,549b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,6n,72p,336b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on "c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.pdf" (6 pages, 273813 bytes).
+Output written on "c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.pdf" (17 pages, 598917 bytes).
 PDF statistics:
- 70 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 139 PDF objects out of 1000 (max. 8388607)
+ 74 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 91 words of extra memory for PDF output out of 10000 (max. 10000000)
 

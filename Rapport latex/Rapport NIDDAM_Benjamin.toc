@@ -18,4 +18,10 @@
 \contentsline {section}{\numberline {3}Présentation des tris}{6}{}%
 \contentsline {section}{\numberline {4}Comparaison des algorithmes}{6}{}%
 \contentsline {subsection}{\numberline {4.1}Lien avec les données}{6}{}%
-\contentsline {section}{\numberline {5}Conclusion}{6}{}%
+\contentsline {subsection}{\numberline {4.2}Traitement des données}{6}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Tris sur le jeu de données aléatoire avec redondance}{7}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Tris sur le jeu de données ordonnées sans redondance}{9}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Tris sur le jeu de données ordonnées avec redondance}{11}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Tris sur le jeu de données inversées sans redondance}{13}{}%
+\contentsline {subsubsection}{\numberline {4.2.5}Tris sur le jeu de données inversées avec redondance}{15}{}%
+\contentsline {section}{\numberline {5}Conclusion}{17}{}%

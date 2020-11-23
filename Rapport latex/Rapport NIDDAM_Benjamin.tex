@@ -29,9 +29,11 @@
 \subsection{Définition}
 
 \paragraph{}
-Un algorithme de tri est, en informatique ou en mathématiques, un algorithme qui permet d'organiser une collection d'objets selon une relation d'ordre déterminée.
+Un algorithme de tri est, en informatique ou en mathématiques, un algorithme qui permet d'organiser une collection d'objets
+selon une relation d'ordre déterminée.
 \newline
-La collection à trier est souvent donnée sous forme de tableau, afin de permettre l'accès direct aux différents éléments de la collection, ou sous forme de liste, ce qui peut se révéler être plus adapté à certains algorithmes et à l'usage de la programmation fonctionnelle.\\
+La collection à trier est souvent donnée sous forme de tableau, afin de permettre l'accès direct aux différents éléments de la collection,
+ou sous forme de liste, ce qui peut se révéler être plus adapté à certains algorithmes et à l'usage de la programmation fonctionnelle.\\
 
 \paragraph{}
 Aujourd'hui on retrouve de nombreux algorithmes de tri que l'on peut diviser en 3 grandes catégories:
@@ -83,7 +85,9 @@ Ces algorithmes sont souvent basés sur une approche assez voisine de celle du t
 \end{itemize}
 
 \section{Critères de classification}
-La classification des algorithmes de tri est très importante, car elle permet de choisir l’algorithme le plus adapté au problème traité, tout en tenant compte des contraintes imposées par celui-ci. Les principales caractéristiques qui permettent de différencier les algorithmes de tri, outre leur principe de fonctionnement, sont la complexité temporelle, la complexité spatiale et le caractère stable.
+La classification des algorithmes de tri est très importante, car elle permet de choisir l’algorithme le plus adapté au problème traité,
+tout en tenant compte des contraintes imposées par celui-ci. Les principales caractéristiques qui permettent de différencier les algorithmes
+de tri, outre leur principe de fonctionnement, sont la complexité temporelle, la complexité spatiale et le caractère stable.
 \subsection{Principe de fonctionnement}
 
 
@@ -131,11 +135,12 @@ Les méthodes présentées sont de deux types :
           \end{itemize}
           \vspace{0.1cm}
 
-          Cette liste n’est évidemment pas exhaustive. Il existe des méthodes particulièrement adaptées à certains types de données spécifiques. Le tri par base (dit radix sort) en est un exemple.
+          Cette liste n’est évidemment pas exhaustive. Il existe des méthodes particulièrement adaptées à certains types de données spécifiques.
+          Le tri par base (dit radix sort) en est un exemple.
           \newline
           \newline
           \includegraphics[scale = 0.5]{O(n).jpg}
-          \underline {Temps d'éxécution en fonction de la compléxité et du nombre d'éléments}
+          \underline {FIGURE 1 - Temps d'éxécution en fonction de la compléxité et du nombre d'éléments}
 
 
 \end{itemize}
@@ -155,15 +160,58 @@ Les méthodes présentées sont de deux types :
 \section{Comparaison des algorithmes}
 \subsection{Lien avec les données}
 L’étude théorique des algorithmes n’est pas suffisante car l’efficacité de ces-derniers dépend
-aussi de l’ordre des données sur lesquelles on les utilise. Les algorithmes que nous allons considérés
-par la suite sont les tris : \textit{par tas}, \textit{compte}, \textit{fusion} et \textit{rapide}. Pour les étudier et les
-comparer, on se propose de créer plusieurs ensembles de données.
+aussi de l’ordre des données sur lesquelles on les utilise. Les algorithmes que nous allons considérer
+par la suite sont les tris : \textit{par tas}, \textit{comptage}, \textit{fusion} et \textit{rapide}.
+Pour les étudier et les comparer, on se propose de créer plusieurs ensembles de données.
 On ordonnera les données toujours par ordre croissant. De plus, on donnera aux données un
 ordre prédéfini (avant le tri). Les jeux de données seront ordonnés : par ordre croissant de 0 à n,
 par ordre décroissant de n à 0 (inversé), aléatoirement sans redondance de donnée, aléatoirement
-avec redondance, aléatoirement mais de façon uniforme sans redondance et aléatoirement de façon
-uniforme mais avec redondance. D’autre part, on fera varié la taille de ces jeux de données (on
-aura par exemple n = 10, n = 500, n = 25000).
+avec redondance. D’autre part, on fera varié la taille de ces jeux de données (on
+aura des tailles allant de n = 10 à n = 40960. Et enfin, pour chaque taille de tableau, nous trierons ces derniers
+à l'aide des quatre algorithmes donnés plus tôt. Précisons aussi que les algo trierons le même tableau pour conserver
+même conditions pour chaque test et que cette opération sera répétée quize fois et que nous ne garderons que la moyenne de ces essais.
+
+\subsection{Traitement des données}
+Pour observer les performances des tris sur nos jeux de données, il nous suffit d’utiliser les
+résultats écrits dans les fichiers créés par le programme en C. On peut traiter les données à la main
+ou utiliser un script Python (annexe). Ce script génère plusieurs tracés, on s’intéresse surtout aux tracés suivant :
+
+\subsubsection{Tris sur le jeu de données aléatoire avec redondance}
+
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png}
+    
+\subsubsection{Tris sur le jeu de données ordonnées sans redondance}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png}
+    
+\subsubsection{Tris sur le jeu de données ordonnées avec redondance}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png}
+
+\subsubsection{Tris sur le jeu de données inversées sans redondance}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png}
+
+\subsubsection{Tris sur le jeu de données inversées avec redondance}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png}
+    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png}
+
+    \underline {Figure 2 – Comparaisons des tris en sur les cinq jeux de données différents}
+\newpage
+
+On observe ici que le tri par compte est le plus efficace avec un vitesse d'exection toujours inférieure à 0.02 secondes.
+En effet
 
 \section{Conclusion}
 
