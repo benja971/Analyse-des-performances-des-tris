@@ -1,47 +1,40 @@
 import matplotlib.pyplot as plt
-import numpy as np
 import os
-from math import log
-
-from numpy.core.fromnumeric import size
 
 os. system('cls')
 
-def retirerFin(liste):
-	liste2 = []
-	for truc in liste:
-		liste2.append(float(truc[:-2]))
-	return liste2
-
-files = []
 names = ["Tri fusion", "Tri rapide", "Tri par tas", "Tri par compte"]
-
-for i in range(4):
-	f = open(""+str(i)+".txt" , 'r')
-	files.append(f) 
-
 i = 0
 j = 0
-for f in files:
-	x = []
-	y = []
-	l1 = []
-	l1 = f.readlines()
-	l1 = retirerFin(l1)
 
-	for i in range(len(l1)):
-		if i%2 == 0:
-			x.append(l1[i])
-		else:
-			y.append(l1[i])
+x = []
+ys = []
+for i in range(4):
+	with  open(""+str(i)+".txt" , 'r') as f:
+		x.clear()
+		y = []
+		l1 = f.readlines()
+		
 
-	fig = plt.figure(1, figsize=(8, 5))	
-	plt.title(names[j])
-	plt.scatter(x,y, marker='o', s = 10, c ="red")
-	plt.plot(x, y, "--")
-	plt.xlabel("Taille du tableau")
-	plt.ylabel("Temps de tri (en s)")
-	plt.savefig(names[j])
-	plt.show()
+		for i in range(len(l1)):
+			if i%2 == 0:
+				x.append(int(l1[i][:-1]))
+			else:
+				y.append(float(l1[i][:-1]))
+
+	ys.append(y)	
+
+
+for y in ys:
+	fig = plt.figure(1, figsize=(8, 5))
+	plt.scatter(x,y, marker='o', s = 10)
+	plt.plot(x, y, "--", label=names[j])
+	plt.legend()
 	j+=1
+
+plt.title("Comparaison des temps obtenus pour les différents tris\n avec jeu de données inversées avec répétitions")
+plt.xlabel("Taille du tableau")
+plt.ylabel("Temps de tri (en s)")
+plt.savefig("ordonnées avec répétitions")
+plt.show()
 
