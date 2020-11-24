@@ -14,7 +14,7 @@
 \begin{document}
 \maketitle
 \begin{center}
-    \includegraphics{Tony Hoare.jpg}
+    \includegraphics{Images/Tony Hoare.jpg}
     \newline
     \newline
     En 1962, Tony Hoare inventa le tri rapide (Quicksort), qui est généralement considéré comme l'algorithme le plus utilisé dans le monde entier.
@@ -22,7 +22,6 @@
 
 \newpage
 \tableofcontents
-
 \newpage
 \section{Introduction}
 
@@ -48,7 +47,7 @@ Les tris par comparaison peuvent encore se diviser en 4 sous catégories en fonc
 \vspace{0.2cm}
 \begin{itemize}
     \item Les algorithmes rapides avec une complexité moyenne de $n*\log(n)$
-    \item Les algorithmes moyennement rapides (En moyenne O($n^2$), O(n) dans le meilleur des cas)
+    \item Les algorithmes moyennement rapides (En moyenne O($n^2$), O($n$) dans le meilleur des cas)
     \item Les algorithmes lents avec une complexité de O($n^2$) dans tous les cas
     \item Les algorithmes très lents avec une complexité moyenne moins bonne que O($n^2$)
 \end{itemize}
@@ -79,23 +78,21 @@ Ces algorithmes sont souvent basés sur une approche assez voisine de celle du t
 \vspace{0.2cm}
 
 \begin{itemize}
-    \item découpage du volume de données à trier en sous-ensembles de taille inférieure à la mémoire rapide disponible ;
-    \item tri de chaque sous-ensemble en mémoire centrale pour former des « monotonies » (sous-ensembles triés) ;
+    \item découpage du volume de données à trier en sous-ensembles de taille inférieur à 0.02 secondes  à la mémoire rapide disponible ;
+    \item tri de chaque sous-ensemble en mémoire centrale pour former des "monotonies" (sous-ensembles triés) ;
     \item interclassement des monotonies.
 \end{itemize}
 
 \section{Critères de classification}
 La classification des algorithmes de tri est très importante, car elle permet de choisir l’algorithme le plus adapté au problème traité,
-tout en tenant compte des contraintes imposées par celui-ci. Les principales caractéristiques qui permettent de différencier les algorithmes
+tout en tenant comptage des contraintes imposées par celui-ci. Les principales caractéristiques qui permettent de différencier les algorithmes
 de tri, outre leur principe de fonctionnement, sont la complexité temporelle, la complexité spatiale et le caractère stable.
-\subsection{Principe de fonctionnement}
-
 
 \newpage
 \subsection{Complexité algorithmique}
 Afin d’évaluer la complexité des différents algorithmes de tri présentés,
-on comptera le nombre de comparaisons et d’échanges de valeur entre deux
-éléments du tableau sans prendre en compte les affectations et comparaisons
+on comptagera le nombre de comparaisons et d’échanges de valeur entre deux
+éléments du tableau sans prendre en comptage les affectations et comparaisons
 sur des variables de comptage de boucles.\\
 \vspace{0.1cm}
 
@@ -103,19 +100,18 @@ Les méthodes présentées sont de deux types :
 \begin{itemize}
     \item des méthodes qui trient les éléments deux à deux, de manière plus ou moins
           efficace, mais qui nécessitent toujours de comparer chacun des N éléments avec
-          chacun des N-1 autres éléments, donc le nombre de comparaisons sera de l’ordre
-          de $n^2$ — on note cet ordre de grandeur \displaystyle O($n^2$).
+          chacun des $N-1$ autres éléments, donc le nombre de comparaisons sera de l’ordre
+          de $n^2$ — on note cet ordre de grandeur $\displaystyle{O(n^2)}$.
           \vspace{0.1cm}
 
-          Par exemple, pour n=1000, $n^2$=$10^6$, pour n=$10^6$, $n^2$=$10^{12}$.
+          Par exemple, pour $n=1000$, $n^2=10^6$, pour $n=10^6$, $n^2=10^{12}$.
           \vspace{0.2cm}
 
           Les algorithmes de ce type sont :
           \begin{itemize}
               \item une méthode de tri élémentaire, le tri par sélection ;
               \item et sa variante, le tri par propagation ou tri bulle ;
-              \item une méthode qui s’apparente à celle utilisée pour trier ses cartes dans un jeu,
-                    le tri par insertion ;
+              \item une méthode qui s’apparente à celle utilisée pour trier ses cartes dans un jeu, le tri par insertion ;
           \end{itemize}
           \vspace{0.2cm}
 
@@ -124,7 +120,7 @@ Les méthodes présentées sont de deux types :
           $n*\log(n)$.
           \vspace{0.1cm}
 
-          Par exemple, pour n=1000, $n*\log(n)$=10000 environ, pour {n=$10^6$}, $n*\log(n)$=$20*10^6$ environ.
+          Par exemple, pour $n=1000$, $n*\log(n)=10000$ environ, pour ${n=10^6}$, $n*\log(n)=20*10^6$ environ.
           \vspace{0.2cm}
 
           Les algorithmes de ce type sont :
@@ -139,23 +135,88 @@ Les méthodes présentées sont de deux types :
           Le tri par base (dit radix sort) en est un exemple.
           \newline
           \newline
-          \includegraphics[scale = 0.5]{O(n).jpg}
+          \includegraphics[scale = 0.5]{Images/O(n).jpg}
           \underline {FIGURE 1 - Temps d'éxécution en fonction de la compléxité et du nombre d'éléments}
 
 
 \end{itemize}
 
 \subsection{Complexité spatiale}
-
 \subsection{Tri en place}
+En algorithmique, la complexité en espace est une mesure de l'espace utilisé par un algorithme, en fonction de propriétés de ses entrées.
+L'espace compte le nombre maximum de cases mémoire utilisées simultanément pendant un calcul. Par exemple le nombre de symboles qu'il faut
+conserver pour pouvoir continuer le calcul. Usuellement l'espace que l'on prend en compte lorsque l'on parle de l'espace nécessaire pour des
+entrées ayant des propriétés données est l'espace nécessaire le plus grand parmi ces entrées ; on parle de complexité en espace dans le pire cas.
+Les études de complexité portent dans la majorité des cas sur le comportement asymptotique, lorsque les grandeurs des entrées qui influencent la
+complexité spatiale tendent vers l'infini, et l'on utilise couramment les notations grand O de Landau.
 
 \subsection{Tri stable}
+Un algorithme de tri stable est un algorithme de tri conservant l'ordre initial de deux éléments égaux. Pour définir cette notion, il est nécessaire
+que la collection à trier soit ordonnancée d'une certaine manière (ce qui est souvent le cas pour beaucoup de structures de données, par exemple pour
+les listes ou les tableaux). Les algorithmes de tri instables peuvent être retravaillés spécifiquement afin de les rendre stables, cependant cela peut
+être aux dépens de la rapidité et/ou peut nécessiter un espace mémoire supplémentaire. Parmi les algorithmes listés plus bas, les tris stables sont :
+\begin{itemize}
+    \item le tri à bulles
+    \item le tri par insertion
+    \item et le tri fusion
+\end{itemize}
+Les autres algorithmes nécessitent $\displaystyle{O(n)}$. mémoire supplémentaire pour\\stocker l'ordre initial des éléments.
 
 \subsection{Tri interne et externe}
+Un algorithme de tri externe sert à ordonner les éléments d’un fichier stocké partiellement ou entièrement en mémoire externe
+(disque). Il existe des algorithmes spécialisés pour trier des fichiers trop grand
+pour la mémoire vive : en une telle application, on veut minimiser l’accès à
+mémoire externe. Le tri interne se fait sur un fichier stocké entièrement en
+mémoire vive. Le plus souvent, on considère le tri d’un tableau  A$\left[ 0...n-1 \right]$;
+parfois, on peut adapter un tel algorithme aux listes chaînées aussi.
+
+\newpage
 
 \subsection{Tri parallèle}
+Certains algorithmes permettent d'exploiter les capacités multitâches de la machine2. Notons également que certains algorithmes, notamment ceux qui fonctionnent
+par insertion, peuvent être lancés sans connaître l'intégralité des données à trier ; on peut alors trier et produire les données à trier en parallèle.
 
 \section{Présentation des tris}
+\subsection{Le tri fusion}
+En informatique, le tri fusion est un algorithme de tri par comparaison stable. Sa complexité temporelle pour une entrée de taille n est de l'ordre de
+$\displaystyle{n * \log n}$, ce qui est asymptotiquement optimal. Ce tri est basé sur la technique algorithmique diviser pour régner. L'opération principale de
+l'algorithme est la fusion, qui consiste à réunir deux listes triées en une seule. L'efficacité de l'algorithme vient du fait que deux listes triées peuvent être
+fusionnées en temps linéaire.\\
+Le tri fusion se décrit naturellement sur des listes et c'est sur de telles structures qu'il est à la fois le plus simple et le plus rapide. Cependant, il fonctionne
+aussi sur des tableaux. La version la plus simple du tri fusion sur les tableaux a une efficacité comparable au tri rapide, mais elle n'opère pas en place : une zone
+temporaire de données supplémentaire de taille égale à celle de l'entrée est nécessaire (des versions plus complexes peuvent être effectuées sur place
+mais sont moins rapides). Sur les listes, sa complexité est optimale, il se montre très simplement et ne requiert pas de copie en mémoire temporaire.
+
+\subsection{Le tri rapide}
+En informatique, le tri rapide ou tri pivot (en anglais quicksort) est un algorithme de tri inventé par C.A.R. Hoare en 19612 et fondé sur la méthode de conception
+"diviser pour miex régner". Il est généralement utilisé sur des tableaux, mais peut aussi être adapté aux listes. Dans le cas des tableaux, c'est un tri en place
+mais non stable.\\
+La complexité moyenne du tri rapide pour n éléments est proportionnelle à $\displaystyle{n * \log n}$ , ce qui est optimal pour un tri par comparaison,
+mais la complexité dans le pire des cas est quadratique. Malgré ce désavantage théorique, c'est en pratique un des tris les plus rapides, et donc un des plus utilisés.
+Le pire des cas est en effet peu probable lorsque l'algorithme est correctement mis en œuvre et il est possible de s'en prémunir définitivement avec la variante Introsort.
+
+\newpage
+
+\subsection{Le tri par tas}
+En informatique, le tri par tas est un algorithme de tri par comparaisons. Cet algorithme est de complexité asymptotiquement optimale, c'est-à-dire que l'on démontre
+qu'aucun algorithme de tri par comparaison ne peut avoir de complexité asymptotiquement meilleure. Sa complexité est proportionnelle à $\displaystyle {n\log n}$
+où $\displaystyle{n}$ est la longueur du tableau à trier. Le tri par tas se fait en place, c’est-à-dire qu’il ne nécessite pas l'allocation d'une zone mémoire supplémentaire
+(plus précisément il ne nécessite qu'une allocation d'une zone mémoire de taille $\displaystyle {O(1)}$).\\
+Son inconvénient majeur est sa lenteur comparé au tri rapide (qui est en moyenne deux fois plus rapide[réf. nécessaire]) : sur un tableau de taille importante, il sera
+né à traiter un nombre élevé d'emplacements mémoire dont l’éloignement peut dépasser la capacité du cache, ce qui ralentit l'accès à la mémoire et l’exécution de l’algorithme.
+
+\subsection{Le tri par comptage}
+Le tri comptage (counting sort en anglais), appelé aussi tri casier, est un algorithme de tri par dénombrement qui s'applique sur des valeurs entières.\\
+Le principe repose sur laconstruction de l'histogramme des données, puis le balayage de celui-ci de façon croissante, afin de reconstruire les données triées.
+Ici, la notion de stabilité n'a pas réellement de sens, puisque l'histogramme factorise les données – plusieurs éléments identiques seront représentés par un unique
+élément quantifié. Ce tri ne peut donc pas être appliqué sur des structures complexes, et il convient exclusivement aux données constituées de nombres entiers
+compris entre une borne min et une borne max connues. Dans un souci d'efficacité, celles-ci doivent être relativement proches l'une de l'autre, ainsi que le nombre
+d'éléments doit être relativement grand.\\
+Dans cette configuration, et avec une distribution de données suivant une loi uniforme discrète, ce tri est le plus rapide (on troque, en quelque sorte, du temps de
+calcul contre de la mémoire). La restriction très particulière imposée à ses valeurs d'entrée en fait un tri en temps linéaire, alors qu'un tri par comparaisons
+optimal nécessite un nombre d'opérations de l'ordre de $\displaystyle{n\log n}$.
+
+\newpage
 
 \section{Comparaison des algorithmes}
 \subsection{Lien avec les données}
@@ -167,7 +228,7 @@ On ordonnera les données toujours par ordre croissant. De plus, on donnera aux 
 ordre prédéfini (avant le tri). Les jeux de données seront ordonnés : par ordre croissant de 0 à n,
 par ordre décroissant de n à 0 (inversé), aléatoirement sans redondance de donnée, aléatoirement
 avec redondance. D’autre part, on fera varié la taille de ces jeux de données (on
-aura des tailles allant de n = 10 à n = 40960. Et enfin, pour chaque taille de tableau, nous trierons ces derniers
+aura des tailles allant de $n = 10$ à $n = 40960$. Et enfin, pour chaque taille de tableau, nous trierons ces derniers
 à l'aide des quatre algorithmes donnés plus tôt. Précisons aussi que les algo trierons le même tableau pour conserver
 même conditions pour chaque test et que cette opération sera répétée quize fois et que nous ne garderons que la moyenne de ces essais.
 
@@ -177,42 +238,33 @@ résultats écrits dans les fichiers créés par le programme en C. On peut trai
 ou utiliser un script Python (annexe). Ce script génère plusieurs tracés, on s’intéresse surtout aux tracés suivant :
 
 \subsubsection{Tris sur le jeu de données aléatoire avec redondance}
+\includegraphics[scale = 0.5]{Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png}\\
+\underline {Figure 2 – Comparaison des tris pour un jeu de données aléatoire avec redondance}
 
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri par tas.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri rapide.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri fusion.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_random_avec_répétiton/Tri par compte.png}
-    
 \subsubsection{Tris sur le jeu de données ordonnées sans redondance}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri par tas.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri rapide.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri fusion.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_sans_répétitions/Tri par compte.png}
-    
+\includegraphics[scale = 0.5]{Images/Courbes img/trié sans rep/ordonnées sans répétitions.png}\\
+\underline {Figure 3 – Comparaison des tris pour un jeu de données aléatoire sans redondance}
+
 \subsubsection{Tris sur le jeu de données ordonnées avec redondance}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri par tas.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri rapide.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri fusion.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_avec_répétitions/Tri par compte.png}
+\includegraphics[scale = 0.5]{Images/Courbes img/trié avec rep/ordonnées avec répétitions.png}\\
+\underline {Figure 4 – Comparaison des tris pour un jeu de données ordonnées avec redondance}
 
 \subsubsection{Tris sur le jeu de données inversées sans redondance}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png}
+\includegraphics[scale = 0.5]{Images/Courbes img/inversé sans rep/inversées sans répétitions.png}\\
+\underline {Figure 5 – Comparaison des tris pour un jeu de données ordonnées sans redondance}
 
 \subsubsection{Tris sur le jeu de données inversées avec redondance}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par tas.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri rapide.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri fusion.png}
-    \includegraphics[scale = 0.7]{../Courbes/Valeurs_triées_inversement_avec_répétitions/Tri par compte.png}
+\includegraphics[scale = 0.5]{Images/Courbes img/inversé avec rep/inversées avec répétitions.png}\\
+\underline {Figure 6 – Comparaison des tris pour un jeu de données inversées avec redondance}
 
-    \underline {Figure 2 – Comparaisons des tris en sur les cinq jeux de données différents}
 \newpage
 
-On observe ici que le tri par compte est le plus efficace avec un vitesse d'exection toujours inférieure à 0.02 secondes.
-En effet
+On observe donc que quoi qu'il arrive, le tri par comptage reste le plus performant avec une complexité temporelle
+quasi linéaire (O($n+k$)) et un temps tout le temps strictement inférieur à 0.02 secondes. Viennent ensuite les tris par tas et fusion
+qui cotoient la barre des 0.1 secondes dans les cinq cas testés (O($n * \log{n}$)). Et enfin le tri rapide qui est très efficace sur nos tableau
+remplis aléatoirement (O($n * \log{n}$)) mais devient très lent sur des tableaux déja ordonnées et inversés avec une complexité quadratique (O($n^2$)).\\
+Pour ce donner une idée plus précises des performances de chaque tri sur chaque jeu de données, on peut modifier notre script python et obtenir ceci:\\
+\newpage
 
 \section{Conclusion}
-
 \end{document}

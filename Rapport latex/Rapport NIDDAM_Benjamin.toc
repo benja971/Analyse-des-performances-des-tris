@@ -8,20 +8,23 @@
 \contentsline {subsubsection}{\numberline {1.2.2}Les Tris utilisant la structure de données}{4}{}%
 \contentsline {subsubsection}{\numberline {1.2.3}Les Tris externes}{4}{}%
 \contentsline {section}{\numberline {2}Critères de classification}{4}{}%
-\contentsline {subsection}{\numberline {2.1}Principe de fonctionnement}{4}{}%
-\contentsline {subsection}{\numberline {2.2}Complexité algorithmique}{5}{}%
-\contentsline {subsection}{\numberline {2.3}Complexité spatiale}{6}{}%
-\contentsline {subsection}{\numberline {2.4}Tri en place}{6}{}%
-\contentsline {subsection}{\numberline {2.5}Tri stable}{6}{}%
-\contentsline {subsection}{\numberline {2.6}Tri interne et externe}{6}{}%
-\contentsline {subsection}{\numberline {2.7}Tri parallèle}{6}{}%
-\contentsline {section}{\numberline {3}Présentation des tris}{6}{}%
-\contentsline {section}{\numberline {4}Comparaison des algorithmes}{6}{}%
-\contentsline {subsection}{\numberline {4.1}Lien avec les données}{6}{}%
-\contentsline {subsection}{\numberline {4.2}Traitement des données}{6}{}%
-\contentsline {subsubsection}{\numberline {4.2.1}Tris sur le jeu de données aléatoire avec redondance}{7}{}%
-\contentsline {subsubsection}{\numberline {4.2.2}Tris sur le jeu de données ordonnées sans redondance}{9}{}%
-\contentsline {subsubsection}{\numberline {4.2.3}Tris sur le jeu de données ordonnées avec redondance}{11}{}%
-\contentsline {subsubsection}{\numberline {4.2.4}Tris sur le jeu de données inversées sans redondance}{13}{}%
-\contentsline {subsubsection}{\numberline {4.2.5}Tris sur le jeu de données inversées avec redondance}{15}{}%
-\contentsline {section}{\numberline {5}Conclusion}{17}{}%
+\contentsline {subsection}{\numberline {2.1}Complexité algorithmique}{5}{}%
+\contentsline {subsection}{\numberline {2.2}Complexité spatiale}{6}{}%
+\contentsline {subsection}{\numberline {2.3}Tri en place}{6}{}%
+\contentsline {subsection}{\numberline {2.4}Tri stable}{6}{}%
+\contentsline {subsection}{\numberline {2.5}Tri interne et externe}{6}{}%
+\contentsline {subsection}{\numberline {2.6}Tri parallèle}{7}{}%
+\contentsline {section}{\numberline {3}Présentation des tris}{7}{}%
+\contentsline {subsection}{\numberline {3.1}Le tri fusion}{7}{}%
+\contentsline {subsection}{\numberline {3.2}Le tri rapide}{7}{}%
+\contentsline {subsection}{\numberline {3.3}Le tri par tas}{8}{}%
+\contentsline {subsection}{\numberline {3.4}Le tri par comptage}{8}{}%
+\contentsline {section}{\numberline {4}Comparaison des algorithmes}{9}{}%
+\contentsline {subsection}{\numberline {4.1}Lien avec les données}{9}{}%
+\contentsline {subsection}{\numberline {4.2}Traitement des données}{9}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}Tris sur le jeu de données aléatoire avec redondance}{9}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}Tris sur le jeu de données ordonnées sans redondance}{10}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}Tris sur le jeu de données ordonnées avec redondance}{10}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}Tris sur le jeu de données inversées sans redondance}{11}{}%
+\contentsline {subsubsection}{\numberline {4.2.5}Tris sur le jeu de données inversées avec redondance}{11}{}%
+\contentsline {section}{\numberline {5}Conclusion}{13}{}%

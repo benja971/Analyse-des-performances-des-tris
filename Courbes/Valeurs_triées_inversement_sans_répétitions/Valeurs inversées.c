@@ -24,6 +24,7 @@ void initTab(unsigned long int *t, unsigned long int n)
         t[(n - 1) - i] = (unsigned long int)(((double)i / n) * ELT_MAX);
         // printf("%li\n", t[i]);
     }
+    printTab(t, n);
 }
 
 void fusion(unsigned long int *t, unsigned int d, unsigned int m, unsigned long int f)
