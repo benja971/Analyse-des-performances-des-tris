@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  24 NOV 2020 01:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.29)  26 NOV 2020 03:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -217,95 +217,130 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--36
 <Images/O(n).jpg, id=26, 701.5008pt x 203.8014pt>
 File: Images/O(n).jpg Graphic file (type jpg)
 <use Images/O(n).jpg>
-Package pdftex.def Info: Images/O(n).jpg  used on input line 138.
+Package pdftex.def Info: Images/O(n).jpg  used on input line 137.
 (pdftex.def)             Requested size: 350.74954pt x 101.90044pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 134--140
-
+Overfull \hbox (24.11243pt too wide) in paragraph at lines 137--139
+[][]
  []
 
 
-Overfull \hbox (24.11243pt too wide) in paragraph at lines 134--140
-[]
- []
-
-
-Overfull \hbox (84.43486pt too wide) in paragraph at lines 134--140
+Overfull \hbox (84.43486pt too wide) in paragraph at lines 137--139
 []$ 
  []
 
-[5 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/O(n).jpg>] [6] [7] [8]
-<Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png, id=40, 578.16pt x 361.35pt>
+[5 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/O(n).jpg>] [6] [7] [8] [9]
+<Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png, id=44, 578.16pt x 361.35pt>
 File: Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png Graphic file (type png)
 <use Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png>
-Package pdftex.def Info: Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png  used on input line 241.
+Package pdftex.def Info: Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png  used on input line 252.
 (pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
 
-Overfull \hbox (33.59384pt too wide) in paragraph at lines 241--243
+Overfull \hbox (37.8893pt too wide) in paragraph at lines 252--254
 []$ 
  []
 
-<Images/Courbes img/trié sans rep/ordonnées sans répétitions.png, id=42, 578.16pt x 361.35pt>
+<Images/Courbes img/trié sans rep/ordonnées sans répétitions.png, id=46, 578.16pt x 361.35pt>
 File: Images/Courbes img/trié sans rep/ordonnées sans répétitions.png Graphic file (type png)
 <use Images/Courbes img/trié sans rep/ordonnées sans répétitions.png>
-Package pdftex.def Info: Images/Courbes img/trié sans rep/ordonnées sans répétitions.png  used on input line 245.
+Package pdftex.def Info: Images/Courbes img/trié sans rep/ordonnées sans répétitions.png  used on input line 256.
 (pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
 
-Overfull \hbox (33.41252pt too wide) in paragraph at lines 245--247
+Overfull \hbox (40.122pt too wide) in paragraph at lines 256--258
 []$ 
  []
 
-[9 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png>]
-<Images/Courbes img/trié avec rep/ordonnées avec répétitions.png, id=48, 578.16pt x 361.35pt>
+<Images/Courbes img/trié avec rep/ordonnées avec répétitions.png, id=47, 578.16pt x 361.35pt>
 File: Images/Courbes img/trié avec rep/ordonnées avec répétitions.png Graphic file (type png)
 <use Images/Courbes img/trié avec rep/ordonnées avec répétitions.png>
-Package pdftex.def Info: Images/Courbes img/trié avec rep/ordonnées avec répétitions.png  used on input line 249.
+Package pdftex.def Info: Images/Courbes img/trié avec rep/ordonnées avec répétitions.png  used on input line 260.
 (pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
 
-Overfull \hbox (40.30331pt too wide) in paragraph at lines 249--251
+Overfull \hbox (40.30331pt too wide) in paragraph at lines 260--262
 []$ 
  []
 
-<Images/Courbes img/inversé sans rep/inversées sans répétitions.png, id=49, 578.16pt x 361.35pt>
+[10 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/aléatoire avec rep/aléatoires avec répétitions.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/trié sans rep/ordonnées sans répétitions.png>]
+<Images/Courbes img/inversé sans rep/inversées sans répétitions.png, id=53, 578.16pt x 361.35pt>
 File: Images/Courbes img/inversé sans rep/inversées sans répétitions.png Graphic file (type png)
 <use Images/Courbes img/inversé sans rep/inversées sans répétitions.png>
-Package pdftex.def Info: Images/Courbes img/inversé sans rep/inversées sans répétitions.png  used on input line 253.
+Package pdftex.def Info: Images/Courbes img/inversé sans rep/inversées sans répétitions.png  used on input line 264.
 (pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
 
-Overfull \hbox (40.122pt too wide) in paragraph at lines 253--255
+Overfull \hbox (34.44005pt too wide) in paragraph at lines 264--266
 []$ 
  []
 
-[10 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/trié sans rep/ordonnées sans répétitions.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/trié avec rep/ordonnées avec répétitions.png>]
-<Images/Courbes img/inversé avec rep/inversées avec répétitions.png, id=55, 578.16pt x 361.35pt>
+<Images/Courbes img/inversé avec rep/inversées avec répétitions.png, id=54, 578.16pt x 361.35pt>
 File: Images/Courbes img/inversé avec rep/inversées avec répétitions.png Graphic file (type png)
 <use Images/Courbes img/inversé avec rep/inversées avec répétitions.png>
-Package pdftex.def Info: Images/Courbes img/inversé avec rep/inversées avec répétitions.png  used on input line 257.
+Package pdftex.def Info: Images/Courbes img/inversé avec rep/inversées avec répétitions.png  used on input line 268.
 (pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
 
-Overfull \hbox (34.62137pt too wide) in paragraph at lines 257--259
+Overfull \hbox (34.62137pt too wide) in paragraph at lines 268--270
 []$ 
  []
 
-[11 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/inversé sans rep/inversées sans répétitions.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/inversé avec rep/inversées avec répétitions.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 262--267
+[11 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/trié avec rep/ordonnées avec répétitions.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/inversé sans rep/inversées sans répétitions.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 273--278
 
  []
 
-[12] [13] (c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.aux) ) 
+<Images/Courbes img/individuels/tri fusion.png, id=60, 578.16pt x 361.35pt>
+File: Images/Courbes img/individuels/tri fusion.png Graphic file (type png)
+<use Images/Courbes img/individuels/tri fusion.png>
+Package pdftex.def Info: Images/Courbes img/individuels/tri fusion.png  used on input line 279.
+(pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
+
+Overfull \hbox (43.82054pt too wide) in paragraph at lines 279--281
+[]$ 
+ []
+
+[12 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/inversé avec rep/inversées avec répétitions.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/individuels/tri fusion.png>]
+<Images/Courbes img/individuels/tri rapide.png, id=66, 578.16pt x 361.35pt>
+File: Images/Courbes img/individuels/tri rapide.png Graphic file (type png)
+<use Images/Courbes img/individuels/tri rapide.png>
+Package pdftex.def Info: Images/Courbes img/individuels/tri rapide.png  used on input line 282.
+(pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
+
+Overfull \hbox (40.97581pt too wide) in paragraph at lines 282--284
+[]$ 
+ []
+
+<Images/Courbes img/individuels/tri par tas.png, id=67, 578.16pt x 361.35pt>
+File: Images/Courbes img/individuels/tri par tas.png Graphic file (type png)
+<use Images/Courbes img/individuels/tri par tas.png>
+Package pdftex.def Info: Images/Courbes img/individuels/tri par tas.png  used on input line 285.
+(pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
+
+Overfull \hbox (44.6668pt too wide) in paragraph at lines 285--287
+[]$ 
+ []
+
+<Images/Courbes img/individuels/tri par comptage.png, id=68, 578.16pt x 361.35pt>
+File: Images/Courbes img/individuels/tri par comptage.png Graphic file (type png)
+<use Images/Courbes img/individuels/tri par comptage.png>
+Package pdftex.def Info: Images/Courbes img/individuels/tri par comptage.png  used on input line 288.
+(pdftex.def)             Requested size: 289.07928pt x 180.67456pt.
+
+Overfull \hbox (81.5012pt too wide) in paragraph at lines 288--290
+[]$ 
+ []
+
+[13 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/individuels/tri rapide.png> <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/individuels/tri par tas.png>] [14 <c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Images/Courbes img/individuels/tri par comptage.png>] [15] (c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.aux) ) 
 Here is how much of TeX's memory you used:
- 4114 strings out of 479497
- 58114 string characters out of 5876370
- 349917 words of memory out of 5000000
- 21063 multiletter control sequences out of 15000+600000
+ 4139 strings out of 479497
+ 59229 string characters out of 5876370
+ 350917 words of memory out of 5000000
+ 21083 multiletter control sequences out of 15000+600000
  547373 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,336b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 66i,6n,72p,344b,424s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}<c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb><c:/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on "c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.pdf" (13 pages, 461676 bytes).
+Output written on "c:/Users/Benjamin/Desktop/fac/Méthodologie/L2/Analyse-des-performances-des-tris/Rapport latex/Rapport NIDDAM_Benjamin.pdf" (15 pages, 670890 bytes).
 PDF statistics:
- 105 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
